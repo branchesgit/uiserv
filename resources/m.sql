@@ -6,24 +6,33 @@ create database ui;
 grant all privileges  on ui.* to 'uiserv'@'localhost';
 
 
--- 组件库表 component
--- id, key, name, desc
-create table if not exists `component` (
-    id int auto_increment,
-    name varchar(60) not null,
-    key varchar(60) not null,
-    version int,
-    type int, -- 组件是单组件，还是复合组件
-    primary key(`id`)
+-- 组件表
+create table if not exists `t_component` (
+    `component_id` int auto_increment,
+    `name` varchar(60) not null,
+    `type` int,  -- 描述组件是复合组件，还是独立组件 1， 0.
+    `version` int,
+    `component_key` varchar(20) not null unique,
+    `creatorId` bigint ,
+    `creatorName` varchar(30),
+    `createTime` datetime,
+    `modifyTime` datetime,
+    primary key (`component_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
--- 组件支持的属性表 property
--- id, key, name, componentId
-create table if not exists `property` (
-    id int auto_increment,
-    key varchar(60) not null,
-    name varchar(60),
-    value varchar(100),
-    subjectKey varchar(50), -- 这个属性需要用什么描述
-    primary key(id)
+
+-- 属性表
+create table if not exists `t_property` (
+    `property_id` int auto_increment,
+    `property_key` int not null,
+    `name` varchar(100) not null,
+    `version` int,
+    `component_key` varchar(20), -- 引用对应的组件需要用什么来描述
+    `creatorId` bigint ,
+    `creatorName` varchar(30),
+    `createTime` datetime,
+    `modifyTime` datetime,
+    primary key (`property_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
