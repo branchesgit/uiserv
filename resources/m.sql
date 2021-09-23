@@ -13,10 +13,10 @@ create table if not exists `t_component` (
     `type` int,  -- 描述组件是复合组件，还是独立组件 1， 0.
     `version` int,
     `component_key` varchar(20) not null unique,
-    `creatorId` bigint ,
-    `creatorName` varchar(30),
-    `createTime` datetime,
-    `modifyTime` datetime,
+    `creator_id` bigint ,
+    `creator_name` varchar(30),
+    `create_time` datetime,
+    `modify_time` datetime,
     primary key (`component_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -28,11 +28,16 @@ create table if not exists `t_property` (
     `name` varchar(100) not null,
     `version` int,
     `component_key` varchar(20), -- 引用对应的组件需要用什么来描述
-    `creatorId` bigint ,
-    `creatorName` varchar(30),
-    `createTime` datetime,
-    `modifyTime` datetime,
+    `creator_id` bigint ,
+    `creator_name` varchar(30),
+    `create_time` datetime,
+    `modify_time` datetime,
     primary key (`property_id`)
 )ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+-- drop table `t_component`;
+
+-- truncate table `t_component`;
+
+-- delete from `t_component` where 1 = 1;

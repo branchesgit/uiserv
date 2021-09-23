@@ -7,7 +7,7 @@ import java.util.Date;
 @Table(name="t_property")
 public class Property {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="property_id")
     private Integer propertyId;
 
@@ -20,16 +20,16 @@ public class Property {
     @Column(name="component_key")
     private Integer componentKey;
 
-    @Column(name="creatorId")
+    @Column(name="creator_id")
     private String creatorId;
 
-    @Column(name="creatorName")
+    @Column(name="creator_name")
     private Long creatorName;
 
-    @Column(name="createTime")
+    @Column(name="create_time")
     private Date createDate;
 
-    @Column(name="modifyTime")
+    @Column(name="modify_time")
     private Date modifyDate;
 
     public Integer getPropertyId() {

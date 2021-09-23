@@ -1,9 +1,6 @@
 package com.hqjll.uiserv.bean.po;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -11,6 +8,7 @@ import java.util.Date;
 public class UIComponent {
 
     @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
     @Column(name="component_id")
     private Integer componentId;
 
@@ -23,17 +21,28 @@ public class UIComponent {
     @Column(name="component_key")
     private String componentKey;
 
-    @Column(name="creatorId")
+    @Column(name="creator_id")
     private Long creatorId;
 
-    @Column(name="creatorName")
+    @Column(name="creator_name")
     private String creatorName;
 
-    @Column(name="createTime")
+    @Column(name="create_time")
     private Date createDate;
 
-    @Column(name="modifyTime")
+    @Column(name="modify_time")
     private Date modifyDate;
+
+    @Column(name="type")
+    private Integer type;
+
+    public Integer getType() {
+        return type;
+    }
+
+    public void setType(Integer type) {
+        this.type = type;
+    }
 
     public Integer getComponentId() {
         return componentId;

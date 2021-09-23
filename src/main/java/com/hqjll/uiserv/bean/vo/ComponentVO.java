@@ -1,4 +1,4 @@
-package com.hqjll.uiserv.bean.vo.input;
+package com.hqjll.uiserv.bean.vo;
 
 public class ComponentVO {
     private Integer componentId;
@@ -15,39 +15,44 @@ public class ComponentVO {
         return componentId;
     }
 
-    public void setComponentId(Integer componentId) {
+    public ComponentVO setComponentId(Integer componentId) {
         this.componentId = componentId;
+        return this;
     }
 
     public String getComponentKey() {
         return componentKey;
     }
 
-    public void setComponentKey(String componentKey) {
+    public ComponentVO setComponentKey(String componentKey) {
         this.componentKey = componentKey;
+        return this;
     }
 
     public String getComponentName() {
         return componentName;
     }
 
-    public void setComponentName(String componentName) {
+    public ComponentVO setComponentName(String componentName) {
         this.componentName = componentName;
+        return this;
     }
 
     public int getVersion() {
         return version;
     }
 
-    public void setVersion(int version) {
+    public ComponentVO setVersion(int version) {
         this.version = version;
+        return this;
     }
 
     public int getType() {
         return type;
     }
 
-    public void setType(int type) {
+    public ComponentVO setType(int type) {
         this.type = type;
+        return this;
     }
 }
